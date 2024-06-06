@@ -1,3 +1,4 @@
+//  CTRL + /
 console.log('hello world')
 // this is a comment
 // on another line
@@ -6,18 +7,20 @@ console.log('hello world')
 this is a multi line
 comment
 */
-
 x = 1
 y = 2
 
 z = x + y
 console.log(z)
 
+
 // in JS, you need to declare a variable
-var x = 1
-var y = 2
+var x = 1;
+var y = 2;
 var z = x + y;
-console.log(typeof z); var w = 4.4;console.log(typeof w);
+
+// we want to end our lines with semi-colons;
+console.log(typeof z);var w = 4.4;console.log(typeof w);
 
 // Javascript is a compiled language.;
 // you don't need to worry about indentation;
@@ -39,20 +42,26 @@ console.log(Array.isArray(names))
 
 // Dictionaries in JS are known as a JS Object (JSON)
 var first_name = "Shoha"
+var lastName = "Tsuchida"
 
+console.log(first_name.toUpperCase())
 var obj  = {
     'content-type': 'application/json',
     "Grades": [100,100,100],
-    first_name : first_name,
-    contenttype: 'something'
-
+    first_name,
+    contenttype: 'something',
+    age: 9000,
+    "content type": 9000,
+    lastName
 };
 console.log(obj)
 
 // JS HOISTING
 console.log(random)
-var random = 'random values.....'
-console.log(random)
+var random;
+console.log(123)
+// var random = 'random values.....'
+// console.log(random)
 
 // undeclared, undefined, null
 var num; // i am declaring num
@@ -70,15 +79,31 @@ console.log(num)
 
 // LET and CONST are both used as variable declarations
 // it is the newer ES6 Syntax
-let fave_num = 10;
-const fave_color = 'blue';
+let faveNum = 10;
+const faveColor = 'blue';
 
 // you cannot reassign value to const
-console.log(fave_num)
-console.log(fave_color)
-fave_num += 13
-console.log(fave_num)
-// fave_color = 'red'
+console.log(faveNum)
+console.log(faveColor)
+faveNum += 13
+console.log(faveNum)
+// faveColor = 'red'
+
+let test;
+console.log(test);
+test = 1;
+console.log(test);
+test = 'test';
+console.log(test);
+const variable = [];
+variable.push(1)
+variable.push(2)
+console.log(variable);
+variable.pop()
+variable.pop()
+variable.push(3)
+variable.push(4)
+console.log(variable);
 
 //  use const until you have to use let
 // let and const are also block level declarations
@@ -110,9 +135,9 @@ console.log(prod);
 
 // division
 let quo = 100/4;
-console.log(quo);
-quo/=5;
-console.log(quo);
+console.log(quo, typeof quo);
+quo/=6;
+console.log(quo, typeof quo);
 
 // exponential
 let square = 5**2;
@@ -122,7 +147,7 @@ console.log(square);
 
 // more Math stuffs
 const floor = Math.floor(24.7);
-console.log(floor)
+console.log(floor, typeof floor)
 const ceil = Math.ceil(24.7)
 console.log(ceil)
 
@@ -135,24 +160,28 @@ console.log(typeof res)
 
 // parseInt() and parseFloat()
 console.log(parseInt('24.7'), typeof parseInt('24.7'))
-console.log(parseFloat('24.7'), typeof parseFloat('24.7'))
+console.log(parseFloat('a24.72d2dd1'), typeof parseFloat('24.7'))
+console.log(String(100), typeof String(100))
 
 /*  ------ JAVASCRIPT FUNTIONS ------ */
 console.log('============ Function Portion ==============')
 // regulary named function
 function nameOfFunction(param1, param2){
     const output = param1 + param2;
-    return output
+    return output;
 };
+const response = nameOfFunction(3,3)
+console.log(response, typeof nameOfFunction);
 
 console.log(nameOfFunction(100,200));
 console.log(nameOfFunction('Le',"Bron"));
 
 // nameless function, but storing it to some variable
 const squareMe = function (num){
-    return num**2
-}
-console.log(squareMe(7));
+    return num**2;
+};
+
+console.log(squareMe(7), typeof squareMe);
 
 
 
@@ -182,19 +211,18 @@ const a4 = (num1, num2) => num1 + num2;
 console.log(a4(9, 999))
 
 const a5 = num => num**2;
-console.log(a5(100))
+console.log(a5(100), typeof a5)
 
 
 // scope is still a thing
-let test = 1;
-const testFunc = () => {
-    let test = 4;
-    console.log(test)
-
+const testing = 1;
+const testingFunc = () => {
+    const testing = 4;
+    console.log(testing)
+    
 };
-console.log(test)
-testFunc();
-
+console.log(testing)
+testingFunc();
 
 // self invoking function
 (()=>{
@@ -215,8 +243,8 @@ const outer = () => {
 };
 
 const addToCounter = outer()
+console.log('STARTING')
 console.log(addToCounter())
-1 + 1
 
 console.log(addToCounter())
 console.log(addToCounter())
@@ -313,7 +341,7 @@ const countUpTo = num=> {
     }
     console.log('done')
 };
-countUpTo(5)
+countUpTo(-5)
 
 // JS has an extra feature.. Do While
 
@@ -326,9 +354,9 @@ const countUpToDo = num=> {
         i++;
     }
     while (i < num) 
-    console.log('done')
+        console.log('done')
 };
-countUpToDo(5);
+countUpToDo(-5);
 
 
 // Array Methods
@@ -345,3 +373,8 @@ console.log(arrNames.slice(1,3))
 const output = arrNames.splice(1, 0, 'Nicole')
 console.log(output, 'output')
 console.log(arrNames, 'arrNames')
+
+
+const clickMe = () => {
+    console.log('clicked')
+}
